@@ -11,7 +11,7 @@ export function Events() {
 
   useEffect(() => {
     // For privacy can hide URL in .env.development file where it is declared
-    fetch(`${process.env.REACT_APP_DUMMY_API}`)
+    fetch(`${process.env.REACT_APP_EVENTS_API}`)
       .then((response) => response.json())
       .then((body) => setEvents(body));
   }, []);

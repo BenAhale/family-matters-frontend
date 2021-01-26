@@ -17,7 +17,7 @@ export function NewEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
-    const response = await fetch(process.env.REACT_APP_DUMMY_API, {
+    const response = await fetch(process.env.REACT_APP_EVENTS_API, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
