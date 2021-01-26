@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Event } from "./Event";
+import { NewEvent } from "./NewEvent";
 
 export function Events() {
   const [date, setDate] = useState(new Date());
@@ -21,6 +22,7 @@ export function Events() {
       <h1>Events Page</h1>
       <Calendar onChange={setDate} date={date} />
       <Event date={date} events={events} />
+      <NewEvent date={date} />
     </div>
   );
 }

@@ -3,8 +3,8 @@ import moment from "moment";
 
 export function Event(props) {
   const eventDate = moment(props.date).format("LL");
-  console.log(props.events);
   console.log(props.date);
+  console.log(props);
 
   const todaysEvents = props.events.filter((event) => event.date === eventDate);
   console.log(todaysEvents);
@@ -13,7 +13,6 @@ export function Event(props) {
     <div className="event">
       <h1>Event on {eventDate} </h1>
       {todaysEvents.map((event, index) => {
-        // if (event.date === String(eventDate)) {
         return (
           <div key={event.id}>
             <h2>{event.name}</h2>
@@ -21,7 +20,6 @@ export function Event(props) {
             <p>{event.date}</p>
           </div>
         );
-        // }
       })}
     </div>
   );
