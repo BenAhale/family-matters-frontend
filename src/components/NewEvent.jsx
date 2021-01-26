@@ -10,6 +10,7 @@ import {
 
 export function NewEvent(props) {
   const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [time, setTime] = useState("12:00 AM");
   const eventDate = moment(props.date).format("LL");
 
@@ -26,6 +27,7 @@ export function NewEvent(props) {
           {
             id: "INCREMENT",
             name: name,
+            description: description,
             time: time,
             date: eventDate,
           },
@@ -33,7 +35,6 @@ export function NewEvent(props) {
       }),
     });
     console.log(response);
-    console.log(props);
     // props.history.push(path), kinda like redirect_to from rails
     // history.push("/");
   }
@@ -48,6 +49,15 @@ export function NewEvent(props) {
         value={name}
         placeholder="e.g. Soccer Game"
         onChange={(e) => setName(e.target.value)}
+      />
+      <EventLabel htmlFor="description">Event Details:</EventLabel>
+      <EventInput
+        type="text"
+        name="description"
+        id="description"
+        value={description}
+        placeholder="Details..."
+        onChange={(e) => setDescription(e.target.value)}
       />
       <EventLabel htmlFor="time">Time</EventLabel>
       <EventSelect

@@ -17,7 +17,7 @@ export function Event(props) {
           <div key={event.id}>
             <h2>{event.name}</h2>
             <p>{event.time}</p>
-            <p>{event.date}</p>
+            <p>{event.description}</p>
           </div>
         );
       })}
