@@ -20,6 +20,7 @@ export function NewEvent(props) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
     await fetch(process.env.REACT_APP_EVENTS_API, {
+
       method: "POST",
       headers: {
         "Content-Type": "application/json",
