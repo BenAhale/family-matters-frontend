@@ -3,6 +3,7 @@ import moment from "moment";
 
 export function Event(props) {
   const eventDate = moment(props.date).format("LL");
+  console.log(eventDate);
   console.log(props.date);
   console.log(props);
 

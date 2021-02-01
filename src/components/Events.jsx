@@ -4,10 +4,9 @@ import "react-calendar/dist/Calendar.css";
 import { Event } from "./Event";
 import { NewEvent } from "./NewEvent";
 
-export function Events() {
+export function Events(props) {
   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState([]);
-  //   console.log(date.toLocaleDateString());
 
   useEffect(() => {
     // For privacy can hide URL in .env.development file where it is declared
@@ -22,7 +21,7 @@ export function Events() {
       <h1>Events Page</h1>
       <Calendar onChange={setDate} date={date} />
       <Event date={date} events={events} />
-      <NewEvent date={date} />
+      <NewEvent events={events} setEvents={setEvents} date={date} />
     </div>
   );
 }
