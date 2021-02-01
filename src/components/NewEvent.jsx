@@ -19,11 +19,7 @@ export function NewEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
-<<<<<<< Updated upstream
-    const response = await fetch(process.env.REACT_APP_DUMMY_API, {
-=======
     await fetch(process.env.REACT_APP_EVENTS_API, {
->>>>>>> Stashed changes
       method: "POST",
       headers: {
         "Content-Type": "application/json",
