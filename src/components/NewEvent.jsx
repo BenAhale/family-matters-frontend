@@ -14,10 +14,16 @@ export function NewEvent(props) {
   const [time, setTime] = useState("12:00 AM");
   const eventDate = moment(props.date).format("LL");
 
+  console.log(props);
+
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
+<<<<<<< Updated upstream
     const response = await fetch(process.env.REACT_APP_DUMMY_API, {
+=======
+    await fetch(process.env.REACT_APP_EVENTS_API, {
+>>>>>>> Stashed changes
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,9 +40,11 @@ export function NewEvent(props) {
         ],
       }),
     });
-    console.log(response);
-    // props.history.push(path), kinda like redirect_to from rails
-    // history.push("/");
+
+    const response = await fetch(process.env.REACT_APP_EVENTS_API);
+    const events = await response.json();
+
+    props.setEvents(events);
   }
 
   return (
