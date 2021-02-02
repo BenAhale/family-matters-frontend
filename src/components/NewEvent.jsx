@@ -19,26 +19,22 @@ export function NewEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
-    await fetch(process.env.REACT_APP_EVENTS_API, {
-
+    await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        data: [
-          {
-            id: "INCREMENT",
-            name: name,
-            description: description,
-            time: time,
-            date: eventDate,
-          },
-        ],
+        event: {
+          name: name,
+          description: description,
+          time: time,
+          date: eventDate,
+        },
       }),
     });
 
-    const response = await fetch(process.env.REACT_APP_EVENTS_API);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`);
     const events = await response.json();
 
     props.setEvents(events);
