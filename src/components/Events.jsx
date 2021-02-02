@@ -20,7 +20,7 @@ export function Events(props) {
     <div>
       <h1>Events Page</h1>
       <Calendar onChange={setDate} date={date} />
-      <Event date={date} events={events} />
+      <Event date={date} events={events} setEvents={setEvents} />
       <NewEvent events={events} setEvents={setEvents} date={date} />
     </div>
   );
