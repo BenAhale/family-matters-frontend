@@ -69,3 +69,7 @@ Back End:
 <img src="./resources/Wireframe4.jpg" style="zoom:33%;" />
 
 <img src="./resources/Wireframe5.jpg" style="zoom:33%;" />
+
+## ERD Diagram
+
+<img src="./resources/ERD.png" style="zoom:70%;" />
