@@ -70,6 +70,28 @@ Back End:
 
 <img src="./resources/Wireframe5.jpg" style="zoom:33%;" />
 
+## R6: Screenshots of your Trello board throughout the duration of the project
+
+1. Trello Board created with cards added across to demonstrate features, deadline of documentation and various checklists
+
+<img src="./resources/trello2.jpg" style="zoom:75%;" />
+
+2. Example card use
+
+- Can see who worked on the feature
+- Checklists implemented to show stages of completion etc
+- Team deadlines set (mimic sprints)
+
+<img src="./resources/trello4.jpg" style="zoom:75%;" />
+
+3. Documentation (Part A) completed and coding commenced
+
+<img src="./resources/trello3.jpg" style="zoom:75%;" />
+
+4. Substantial Progress Made
+
+<img src="./resources/trello5.jpg" style="zoom:75%;" />
+
 ## ERD Diagram
 
 <img src="./resources/ERD.png" style="zoom:70%;" />
