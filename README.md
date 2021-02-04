@@ -74,7 +74,7 @@ Back End:
 
 1. Trello Board created with cards added across to demonstrate features, deadline of documentation and various checklists
 
-<img src="./resources/trello2.jpg" style="zoom:75%;" />
+<img src="./resources/trello2.png" style="zoom:75%;" />
 
 2. Example card use
 
@@ -82,15 +82,15 @@ Back End:
 - Checklists implemented to show stages of completion etc
 - Team deadlines set (mimic sprints)
 
-<img src="./resources/trello4.jpg" style="zoom:75%;" />
+<img src="./resources/trello4.png" style="zoom:75%;" />
 
 3. Documentation (Part A) completed and coding commenced
 
-<img src="./resources/trello3.jpg" style="zoom:75%;" />
+<img src="./resources/trello3.png" style="zoom:75%;" />
 
 4. Substantial Progress Made
 
-<img src="./resources/trello5.jpg" style="zoom:75%;" />
+<img src="./resources/trello5.png" style="zoom:75%;" />
 
 ## ERD Diagram
 
