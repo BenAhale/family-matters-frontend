@@ -1,12 +1,15 @@
 import React from "react";
 import moment from "moment";
 import { CardLink } from "../styles/Events";
+import { BrowserRouter, Route, Link } from "react-router-dom";
+import { UpdateEvent } from "./UpdateEvent";
 
 export function Event(props) {
   const eventDate = moment(props.date).format("LL");
   console.log(eventDate);
   console.log(props.date);
   console.log(props);
+  const setEvents = props.setEvents;
 
   const todaysEvents = props.events.filter((event) => event.date === eventDate);
   console.log(todaysEvents);
@@ -21,6 +24,7 @@ export function Event(props) {
       },
       body: JSON.stringify({
         event: {
+          id: event.id,
           name: event.name,
           description: event.description,
           time: event.time,
@@ -50,6 +54,22 @@ export function Event(props) {
             >
               Delete Event
             </CardLink>
+            <BrowserRouter>
+              <Link
+                to={{
+                  pathname: `/events/${event.id}/edit`,
+                  //   state: { setEvents: props.setEvents },
+                }}
+              >
+                Update Event
+              </Link>
+              <Route
+                path="/events/:id/edit"
+                render={(props) => (
+                  <UpdateEvent {...props} setEvents={setEvents} />
+                )}
+              />
+            </BrowserRouter>{" "}
           </div>
         );
       })}
