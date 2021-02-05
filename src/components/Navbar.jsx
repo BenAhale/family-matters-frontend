@@ -5,6 +5,10 @@ export function Navbar() {
 
   function signOut() {
     localStorage.removeItem("token")
+<<<<<<< HEAD
+=======
+    history.push("/")
+>>>>>>> c796df86b43c9bba6c67407ba4614232e9d913e0
   }
 
   return (
