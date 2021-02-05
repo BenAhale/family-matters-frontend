@@ -16,7 +16,11 @@ export function UpdateEvent(props) {
   const id = props.match.params.id;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then((res) => res.json())
       .then((event) => {
         setName(event.name);
@@ -32,6 +36,7 @@ export function UpdateEvent(props) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify({
         event: {
@@ -43,7 +48,11 @@ export function UpdateEvent(props) {
       }),
     });
 
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    });
     const events = await response.json();
     console.log(props);
     props.setEvents(events);

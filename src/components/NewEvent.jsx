@@ -42,6 +42,8 @@ export function NewEvent(props) {
     const events = await response.json();
 
     props.setEvents(events);
+
+    
   }
 
   return (
