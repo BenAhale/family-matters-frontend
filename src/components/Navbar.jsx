@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link, useHistory } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
-
   return (
     <nav>
       <Link to="/">Home</Link>
@@ -13,5 +12,5 @@ export function Navbar() {
       <Link to="/sign-in">Sign In</Link>
       <Link to="/sign-up">Sign Up</Link>
     </nav>
-  )
+  );
 }

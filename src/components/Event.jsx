@@ -21,7 +21,7 @@ export function Event(props) {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify({
         event: {
@@ -34,7 +34,15 @@ export function Event(props) {
       }),
     });
 
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`);
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
     const events = await response.json();
 
     props.setEvents(events);
