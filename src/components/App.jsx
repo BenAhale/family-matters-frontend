@@ -28,7 +28,6 @@ function App() {
           <ProtectedRoute path="/events" component={Events} />
           <Route path="/groceries" component={Groceries} />
           <Route path="/chores" component={Chores} />
-          <Route path="/sign-out" component={SignOut} />
         </Switch>
       </div>
     </BrowserRouter>
