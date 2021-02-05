@@ -5,30 +5,30 @@ import { Memories } from "./Memories";
 import { Groceries } from "./Groceries";
 import { Chores } from "./Chores";
 import "../styles/App.css";
-import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { ProtectedRoute } from './ProtectedRoute'
+import { SignIn } from './SignIn'
+import { Navbar } from './Navbar'
+import { SignUp } from './SignUp'
 
 function App() {
   return (
     // wrap everything in BrowserRouter to initialize react router
     <BrowserRouter>
       <div>
-        <nav>
-          {/* navigation between different components */}
-          <Link to="/">Home</Link>
-          <Link to="/events">Events</Link>
-          <Link to="/memories">Memories</Link>
-          <Link to="/groceries">Groceries</Link>
-          <Link to="/chores">Chores</Link>
-        </nav>
+        <Navbar />
         {/* Routes */}
         <Switch>
           {/* defining routes with paths */}
           {/* first with exact prevents double rendering */}
           <Route exact path="/" component={Home} />
+          <Route path="/sign-in" component={SignIn} />
+          <Route path="/sign-up" component={SignUp} />
           <Route path="/memories" component={Memories} />
-          <Route path="/events" component={Events} />
+          <ProtectedRoute path="/events" component={Events} />
           <Route path="/groceries" component={Groceries} />
           <Route path="/chores" component={Chores} />
+          <Route path="/sign-out" component={SignOut} />
         </Switch>
       </div>
     </BrowserRouter>
