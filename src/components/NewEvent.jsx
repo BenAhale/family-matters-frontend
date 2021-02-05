@@ -23,6 +23,7 @@ export function NewEvent(props) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`
       },
       body: JSON.stringify({
         event: {
@@ -34,7 +35,10 @@ export function NewEvent(props) {
       }),
     });
 
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`);
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+      headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`
+    }});
     const events = await response.json();
 
     props.setEvents(events);

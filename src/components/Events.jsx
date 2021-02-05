@@ -10,7 +10,11 @@ export function Events(props) {
 
   useEffect(() => {
     // For privacy can hide URL in .env.development file where it is declared
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/events`)
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`
+      }
+    })
       .then((response) => response.json())
       .then((body) => setEvents(body));
   }, []);
