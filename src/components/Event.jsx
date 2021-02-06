@@ -12,6 +12,10 @@ export function Event(props) {
   // filter to display events that are on calendar date clicked on
   const todaysEvents = props.events.filter((event) => event.date === eventDate);
 
+  const sortedEvents = todaysEvents.sort((a, b) =>
+    a.time > b.time ? 1 : b.time > a.time ? -1 : 0
+  );
+
   // delete event functionality
   async function onDeleteClick(e, event) {
     e.preventDefault();
@@ -52,7 +56,7 @@ export function Event(props) {
     <div className="event">
       <h1>Event on {eventDate} </h1>
       {/* uses above filter to map out desired event entries */}
-      {todaysEvents.map((event, index) => {
+      {sortedEvents.map((event, index) => {
         return (
           <div key={event.id}>
             <h2>{event.name}</h2>
