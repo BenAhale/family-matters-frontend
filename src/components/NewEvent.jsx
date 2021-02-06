@@ -13,7 +13,7 @@ export function NewEvent(props) {
   // setting initial states, hooks
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [time, setTime] = useState("12:00 AM");
+  const [time, setTime] = useState("0:00");
   const eventDate = moment(props.date).format("LL");
 
   console.log(props);
@@ -51,7 +51,7 @@ export function NewEvent(props) {
     props.setEvents(events);
     setName("");
     setDescription("");
-    setTime("12:00 AM");
+    setTime("0:00");
   }
 
   return (
