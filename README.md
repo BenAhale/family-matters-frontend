@@ -1,5 +1,23 @@
 [Trello Board](https://trello.com/b/7JUFHUsE/family-app-rails-react)
 
+[Manual Testing](https://docs.google.com/spreadsheets/d/e/2PACX-1vR-MRHSKj76wpLnlKsQpdOXbStY9fusDuxciPw7fjHnqDjx6TrAdUiOqa8HKAj9BbU0jEVlv7h5u28Q/pubhtml)
+
+## Libraries Used
+
+### Create React App
+
+Create-React-App is a CLI tool that requires no building configuration. In fact, it facilitates the generation of your own boilerplate and lets you initiate the app building process smoothly. You need only one build dependency, and thus, no more complexities are involved. More suitable for simple web apps, this CLI tool has underlayers of Webpack Babel, EsLint, etc.
+
+### React Router
+
+React Router, a group of navigational components synchronizes the components of the UI with browsers address. This makes it effortless to handle navigation in SPA.
+
+Additionally, it offers vivid nesting support, stable screen-to-screen transitions, and server-side rendering.
+
+### Styled Components
+
+Styled Components is a CSS tool that helps you organize your React project (TIP: it works with React Native too). This library helps you build small, reusable components responsible for the look of your app. With traditional CSS you may face the problem of accidentally overwriting selectors used in other places of the site, but thanks to Style Components you can avoid this issue by using a CSS syntax directly inside your components.
+
 ## R1: Description of your website
 
 **Purpose**
