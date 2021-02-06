@@ -27,6 +27,7 @@ export function NewAlbum() {
         ],
       }),
     });
+    console.log(response);
     // props.history.push(path), kinda like redirect_to from rails
     // history.push("/");
   }

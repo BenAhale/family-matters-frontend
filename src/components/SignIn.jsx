@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 export function SignIn({ history }) {
   const [email, setEmail] = useState("");
@@ -11,13 +11,16 @@ export function SignIn({ history }) {
       auth: { email, password },
     };
     try {
-      const response = await fetch("http://localhost:3000/auth/sign-in", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/sign-in`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        }
+      );
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {

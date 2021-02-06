@@ -11,21 +11,24 @@ export function SignUp({ history }) {
   async function onFormSubmit(event) {
     event.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/auth/sign-up", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          user: {
-            email,
-            password,
-            first_name: firstName,
-            last_name: lastName,
-            family_id: familyID,
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/auth/sign-up`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
           },
-        }),
-      });
+          body: JSON.stringify({
+            user: {
+              email,
+              password,
+              first_name: firstName,
+              last_name: lastName,
+              family_id: familyID,
+            },
+          }),
+        }
+      );
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
