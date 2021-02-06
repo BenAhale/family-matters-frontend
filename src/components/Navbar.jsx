@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Navbar separated as own component to shrink code
 export function Navbar() {
   return (
     <nav>

@@ -6,12 +6,13 @@ import {
   AlbumInputSubmit,
 } from "../styles/NewAlbum";
 
+// create album functionality
 export function NewAlbum() {
   const [name, setName] = useState("");
 
   async function onFormSubmit(e) {
     e.preventDefault();
-    // POST request with fetch, refer to SheetsDB docs
+    // POST request with fetch
     const response = await fetch(process.env.REACT_APP_ALBUMS_API, {
       method: "POST",
       headers: {
@@ -22,17 +23,16 @@ export function NewAlbum() {
           {
             id: "INCREMENT",
             name: name,
-            // image: image,
           },
         ],
       }),
     });
-    console.log(response);
     // props.history.push(path), kinda like redirect_to from rails
     // history.push("/");
   }
 
   return (
+    // Album Creation Form
     <AlbumForm onSubmit={onFormSubmit}>
       <AlbumLabel htmlFor="name">Album Name:</AlbumLabel>
       <AlbumInput

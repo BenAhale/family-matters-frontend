@@ -5,6 +5,7 @@ import { Event } from "./Event";
 import { NewEvent } from "./NewEvent";
 
 export function Events(props) {
+  // initialise state to set date in calendar selection
   const [date, setDate] = useState(new Date());
   const [events, setEvents] = useState([]);
 
@@ -12,8 +13,8 @@ export function Events(props) {
     // For privacy can hide URL in .env.development file where it is declared
     fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     })
       .then((response) => response.json())
       .then((body) => setEvents(body));
@@ -23,6 +24,7 @@ export function Events(props) {
   return (
     <div>
       <h1>Events Page</h1>
+      {/* relative props passed across components */}
       <Calendar onChange={setDate} date={date} />
       <Event date={date} events={events} setEvents={setEvents} />
       <NewEvent events={events} setEvents={setEvents} date={date} />
