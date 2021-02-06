@@ -8,7 +8,9 @@ import {
   EventSelect,
 } from "../styles/NewEvent";
 
+// create event functionality
 export function NewEvent(props) {
+  // setting initial states, hooks
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("12:00 AM");
@@ -45,6 +47,7 @@ export function NewEvent(props) {
     );
     const events = await response.json();
 
+    // resets new event form back to placeholders/initial state
     props.setEvents(events);
     setName("");
     setDescription("");
@@ -52,6 +55,7 @@ export function NewEvent(props) {
   }
 
   return (
+    // Event Creation Form
     <EventForm onSubmit={onFormSubmit}>
       <EventLabel htmlFor="name">Event Name:</EventLabel>
       <EventInput

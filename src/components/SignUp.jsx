@@ -1,11 +1,12 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 
 export function SignUp({ history }) {
+  // setting initial states, hooks
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
-  const [familyID, setFamilyID] = useState("")
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [familyID, setFamilyID] = useState("");
 
   async function onFormSubmit(event) {
     event.preventDefault();
@@ -15,13 +16,21 @@ export function SignUp({ history }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ user: { email, password, first_name: firstName, last_name: lastName, family_id: familyID } }),
+        body: JSON.stringify({
+          user: {
+            email,
+            password,
+            first_name: firstName,
+            last_name: lastName,
+            family_id: familyID,
+          },
+        }),
       });
       if (response.status >= 400) {
         throw new Error("incorrect credentials");
       } else {
         const { jwt } = await response.json();
-        console.log(jwt)
+        console.log(jwt);
         localStorage.setItem("token", jwt);
         history.push("/");
       }

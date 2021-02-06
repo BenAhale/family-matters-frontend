@@ -5,18 +5,17 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import { UpdateEvent } from "./UpdateEvent";
 
 export function Event(props) {
+  // props passed through
   const eventDate = moment(props.date).format("LL");
-  console.log(eventDate);
-  console.log(props.date);
-  console.log(props);
   const setEvents = props.setEvents;
 
+  // filter to display events that are on calendar date clicked on
   const todaysEvents = props.events.filter((event) => event.date === eventDate);
-  console.log(todaysEvents);
 
+  // delete event functionality
   async function onDeleteClick(e, event) {
     e.preventDefault();
-    // POST request with fetch, refer to SheetsDB docs
+    // DELETE request with fetch
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${event.id}`, {
       method: "DELETE",
       headers: {
@@ -34,6 +33,7 @@ export function Event(props) {
       }),
     });
 
+    // resets state to render again without deleted event
     const response = await fetch(
       `${process.env.REACT_APP_BACKEND_URL}/events`,
       {
@@ -51,6 +51,7 @@ export function Event(props) {
   return (
     <div className="event">
       <h1>Event on {eventDate} </h1>
+      {/* uses above filter to map out desired event entries */}
       {todaysEvents.map((event, index) => {
         return (
           <div key={event.id}>
@@ -67,7 +68,6 @@ export function Event(props) {
               <Link
                 to={{
                   pathname: `/events/${event.id}/edit`,
-                  //   state: { setEvents: props.setEvents },
                 }}
               >
                 Update Event

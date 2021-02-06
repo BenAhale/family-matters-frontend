@@ -8,7 +8,9 @@ import {
   EventSelect,
 } from "../styles/NewEvent";
 
+// Update Event Functionality
 export function UpdateEvent(props) {
+  // setting initial states, hooks
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [time, setTime] = useState("12:00 AM");
@@ -18,8 +20,8 @@ export function UpdateEvent(props) {
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
-      }
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
     })
       .then((res) => res.json())
       .then((event) => {
@@ -31,12 +33,12 @@ export function UpdateEvent(props) {
 
   async function onFormSubmit(e) {
     e.preventDefault();
-    // POST request with fetch, refer to SheetsDB docs
+    // PUT request with fetch
     await fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       body: JSON.stringify({
         event: {
@@ -48,13 +50,16 @@ export function UpdateEvent(props) {
       }),
     });
 
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`
+    // resets state to render again with newly updated event
+    const response = await fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
       }
-    });
+    );
     const events = await response.json();
-    console.log(props);
     props.setEvents(events);
     props.history.push("/events");
   }
