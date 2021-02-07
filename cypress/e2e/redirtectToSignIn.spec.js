@@ -1,5 +1,3 @@
-import { cyan } from "@material-ui/core/colors";
-
 describe("Redirects from event page due to login required", () => {
   it("should have url /events", () => {
     // test code, will naturally redirect to sign-in
