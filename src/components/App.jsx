@@ -10,6 +10,7 @@ import { ProtectedRoute } from './ProtectedRoute'
 import { SignIn } from './SignIn'
 import { Navbar } from './Navbar'
 import { SignUp } from './SignUp'
+import { ImageForm } from './ImageForm'
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <ProtectedRoute path="/events" component={Events} />
           <Route path="/groceries" component={Groceries} />
           <Route path="/chores" component={Chores} />
+          <Route path="/images" component={ImageForm} />
         </Switch>
       </div>
     </BrowserRouter>
