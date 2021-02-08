@@ -1,4 +1,12 @@
+## Project Journal
+
+Early in the project it was discussed amongst the team members what they each felt confident/wanted to practice more of and what areas they wanted to tackle each. ALong the way there were obvious changes due to personal commitments/obstacles that came up during the duration of the project. Each day involved the group discussing what they had done the previous day, what they were working on, and what they were aiming to accomplish by the end of the day or when they expected to complete a feature. Along the way whenever a significant change was made they would push commits and alert the other of this. While making notes/comments on the team trello board as linked below. Once a foundation was laid with react and fake databases, the team moved to Rails to link the two together properly with a development based database. Following this the project continued with focusing development on specific features, testing, continuous planning and effecive communication to achieve team goals.
+
 [Trello Board](https://trello.com/b/7JUFHUsE/family-app-rails-react)
+
+[GitHub Frontend Code](https://github.com/ameliadavis271/family-matters-frontend)
+
+[GitHub Backend Code](https://github.com/ameliadavis271/family-matters-backend)
 
 [Manual Testing](https://docs.google.com/spreadsheets/d/e/2PACX-1vR-MRHSKj76wpLnlKsQpdOXbStY9fusDuxciPw7fjHnqDjx6TrAdUiOqa8HKAj9BbU0jEVlv7h5u28Q/pubhtml)
 
@@ -17,6 +25,10 @@ Additionally, it offers vivid nesting support, stable screen-to-screen transitio
 ### Styled Components
 
 Styled Components is a CSS tool that helps you organize your React project (TIP: it works with React Native too). This library helps you build small, reusable components responsible for the look of your app. With traditional CSS you may face the problem of accidentally overwriting selectors used in other places of the site, but thanks to Style Components you can avoid this issue by using a CSS syntax directly inside your components.
+
+### Cypress
+
+Cypress is a JavaScript-based end-to-end testing framework that doesn't use Selenium at all. It is built on top of Mocha, which is again a feature-rich JavaScript test framework running on and in the browser, making asynchronous testing simple and fun. Cypress also uses a BDD/TDD assertion library and a browser that can be paired with any JavaScript testing framework.
 
 ## R1: Description of your website
 
