@@ -27,6 +27,7 @@ export function SignIn({ history }) {
         const { jwt } = await response.json();
         localStorage.setItem("token", jwt);
         history.push("/");
+        window.location.reload(false);
       }
     } catch (err) {
       setErrMessage(err.message);
