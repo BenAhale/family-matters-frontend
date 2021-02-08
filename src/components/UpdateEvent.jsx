@@ -19,7 +19,7 @@ export function UpdateEvent(props) {
   const id = props.match.params.id;
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`, {
+    fetch(`https://family-matters-api.herokuapp.com/events/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -35,7 +35,7 @@ export function UpdateEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // PUT request with fetch
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${id}`, {
+    await fetch(`https://family-matters-api.herokuapp.com/events/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export function UpdateEvent(props) {
 
     // resets state to render again with newly updated event
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      `https://family-matters-api.herokuapp.com/events`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

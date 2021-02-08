@@ -20,7 +20,7 @@ export function Event(props) {
   async function onDeleteClick(e, event) {
     e.preventDefault();
     // DELETE request with fetch
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/events/${event.id}`, {
+    await fetch(`https://family-matters-api.herokuapp.com/events/${event.id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export function Event(props) {
 
     // resets state to render again without deleted event
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      `https://family-matters-api.herokuapp.com/events`,
       {
         headers: {
           "Content-Type": "application/json",

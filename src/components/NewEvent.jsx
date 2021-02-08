@@ -22,7 +22,7 @@ export function NewEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+    await fetch(`https://family-matters-api.herokuapp.com/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -39,7 +39,7 @@ export function NewEvent(props) {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      `https://family-matters-api.herokuapp.com/events`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -6,7 +6,7 @@ export function Memories() {
   let history = useHistory()
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/all`, {
+    fetch(`https://family-matters-api.herokuapp.com/memories/all`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
@@ -18,13 +18,13 @@ export function Memories() {
 
   async function deleteMemory(e, id) {
     e.preventDefault()
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/${id}`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/${id}`, {
       method: "DELETE",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
     });
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/all`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/all`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`

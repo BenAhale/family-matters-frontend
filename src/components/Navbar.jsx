@@ -10,7 +10,7 @@ export function Navbar(props) {
   useEffect(() => {
     async function checkAuthStatus() {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/status`, {
+        const response = await fetch(`https://family-matters-api.herokuapp.com/status`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

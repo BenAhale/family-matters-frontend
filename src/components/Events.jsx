@@ -11,7 +11,7 @@ export function Events(props) {
 
   useEffect(() => {
     // For privacy can hide URL in .env.development file where it is declared
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+    fetch(`https://family-matters-api.herokuapp.com/events`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },

@@ -18,7 +18,7 @@ export function ImageForm() {
 
   async function onFormSubmit(e) {
     e.preventDefault();
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/url`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/url`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ export function ImageForm() {
   }
 
   async function updateDatabase() {
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/new`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,16 +69,6 @@ export function ImageForm() {
     .then(history.push("/memories"))
     .catch(error => console.log(error))
   }
-
-  // async function getImage() {
-  //   await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/geturl`, {
-  //     method: "GET"
-  //   })
-  //   .then(response => response.json())
-  //   .then((body) => {
-  //     setNewUrl(body.url)
-  //   })
-  // }
 
   return (
     <div>

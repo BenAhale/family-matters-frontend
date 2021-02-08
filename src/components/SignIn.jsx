@@ -12,7 +12,7 @@ export function SignIn({ history }) {
     };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/auth/sign-in`,
+        `https://family-matters-api.herokuapp.com/auth/sign-in`,
         {
           method: "POST",
           headers: {
