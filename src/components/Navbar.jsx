@@ -35,7 +35,7 @@ export function Navbar(props) {
       }
     }
     checkAuthStatus();
-  }, [auth]);
+  }, [auth, history]);
 
   function endSession() {
     localStorage.removeItem("token")
