@@ -21,7 +21,7 @@ export function NewEvent(props) {
   async function onFormSubmit(e) {
     e.preventDefault();
     // POST request with fetch, refer to SheetsDB docs
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/events`, {
+    await fetch(`https://family-matters-api.herokuapp.com/events`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,7 @@ export function NewEvent(props) {
     });
 
     const response = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/events`,
+      `https://family-matters-api.herokuapp.com/events`,
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -57,7 +57,7 @@ export function NewEvent(props) {
   return (
     // Event Creation Form
     <EventForm onSubmit={onFormSubmit}>
-      <EventLabel htmlFor="name">Event Name:</EventLabel>
+      <EventLabel htmlFor="name">Name</EventLabel>
       <EventInput
         type="text"
         name="name"
@@ -66,7 +66,7 @@ export function NewEvent(props) {
         placeholder="e.g. Soccer Game"
         onChange={(e) => setName(e.target.value)}
       />
-      <EventLabel htmlFor="description">Event Details:</EventLabel>
+      <EventLabel htmlFor="description">Details</EventLabel>
       <EventInput
         type="text"
         name="description"

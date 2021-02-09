@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from '../styles/SignIn.module.css'
 
 export function SignIn({ history }) {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export function SignIn({ history }) {
     };
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/auth/sign-in`,
+        `https://family-matters-api.herokuapp.com/auth/sign-in`,
         {
           method: "POST",
           headers: {
@@ -35,28 +36,35 @@ export function SignIn({ history }) {
   }
 
   return (
-    <>
-      <h1>Login</h1>
+    <div className={styles.formContainer}>
+      <h1>Sign In</h1>
       {errMessage && <span>{errMessage}</span>}
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <input type="submit" value="Submit" />
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <input type="submit" value="Submit" className={styles.submit}/>
+          <button className={styles.redirectButton} onClick={() => history.push("/sign-up")}>Sign Up</button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }

@@ -1,0 +1,67 @@
+body {
+  background-color: #fff;
+}
+
+.formContainer {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+.fadedText {
+  color: #999;
+  font-family: Arial;
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.formContainer h1 {
+  width: 60%;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid gray;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 35px;
+  font-family: Arial;
+  margin-bottom: 60px;
+}
+
+.inputGroup {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.inputGroup input {
+  width: 100%;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 20px;
+  font-family: Arial;
+  margin-bottom: 5px;
+}
+
+.submit:hover {
+  cursor:pointer;
+}
+
+.redirectButton {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 0.5px solid gray;
+}
+.redirectButton:hover {
+  cursor: pointer;
+}

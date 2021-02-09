@@ -1,0 +1,161 @@
+.calendarRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  border-bottom: 0.5px solid gray;
+  margin-right: 30px;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerRow button {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 130px;
+  height: 30px;
+  background-color: #3868D9;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+  color: white;
+  font-size: 17px;
+}
+
+.headerRow button:hover {
+  background-color: #4f83ff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.newEventForm {
+  color: white;
+  display: block;
+  width: 300px;
+  margin-right: 5%;
+  padding: 15px;
+  border: 0.5px solid lightgray;
+  background-color: #444;
+  border-radius: 15px;
+}
+
+.newEventForm label {
+  font-family: Arial;
+}
+
+input, select {
+  width: 100%;
+  border: 0.5px solid gray;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.newEventForm h3 {
+  font-size: 20px;
+  font-family: Arial;
+  margin: 0;
+}
+.newEventForm form {
+  width: 100%;
+}
+
+.eventsRow h1 {
+  font-family: Arial;
+}
+
+.eventsContainer {
+  display: flex;
+}
+
+.eventCard {
+  /* border: 0.1px solid#eee; */
+  background-color: #EAEEF9;
+  border-radius: 10px;
+  width: 200px;
+  min-height: 200px;
+  padding: 15px;
+  font-family: Arial;
+  margin-right: 30px;
+}
+
+.eventCard h2 {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 0.5px solid gray;
+}
+
+.eventCard p {
+  text-align: center;
+}
+
+.eventActions {
+  margin-top: 10px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+}
+
+.eventButton {
+  background-color: #3868D9;
+  border-radius: 7px;
+  padding: 8px;
+}
+
+.eventActions a {
+  text-decoration: none;
+  color: white;
+}
+
+.eventButton:hover {
+  background-color: #4f83ff;
+  transition-duration: 0.5s;
+}
+
+.eventsCalendar {
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.eventsCalender button {
+  font-size: 30px;
+}
+
+.editEventContainer {
+  position: absolute;
+  width: 400px;
+  height: 70%;
+  top: 25%;
+  left: 40%;
+  -webkit-transform: translateX(-50%);
+  -webkit-transform: translateY(-30%);
+  transform: translateX(-50%);
+  transform: translateY(-30%);
+  background-color: #444;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.editEventContainer h2 {
+  color: white;
+  font-size: 30px;
+  font-family: Arial;
+  border-bottom: 2px solid white;
+}
+
+.editEventForm {
+  width: 100%;
+}
+
+.editEventForm input {
+  width: 100%;
+}

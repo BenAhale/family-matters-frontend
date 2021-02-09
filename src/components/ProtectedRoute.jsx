@@ -8,7 +8,7 @@ export function ProtectedRoute({ exact, path, component }) {
   useEffect(() => {
     async function checkAuthStatus() {
       try {
-        const response = await fetch("http://localhost:3000/status", {
+        const response = await fetch("https://family-matters-api.herokuapp.com/status", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

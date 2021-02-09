@@ -1,0 +1,133 @@
+.headerSection {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerSection h1 {
+  font-family: Arial;
+}
+
+.headerSection button {
+  margin-top: 20px;
+  margin-right: 20px;
+  width: 145px;
+  height: 30px;
+  background-color: #3868D9;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+  color: white;
+  font-size: 17px;
+}
+
+.headerSection button:hover {
+  background-color: #4f83ff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.noMemoriesMsg {
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 20px;
+  font-family: arial;
+  padding: 20px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: rgba(255, 79, 79, 0.2);
+}
+
+.noMemoriesMsg p {
+  text-align: center;
+}
+
+.noMemoriesMsg h2 {
+  text-align: center;
+}
+
+.newMemoryContainer {
+  background-color: #EAEEF9;
+  border-radius: 10px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-right: 50px;
+  padding: 10px 20px;
+}
+
+.newMemoryContainer h1 {
+  margin: 0;
+  margin-top: 20px;
+  font-family: arial;
+}
+
+.newMemoryContainer label {
+  font-family: arial;
+  font-size: 16px;
+}
+
+.newMemoryContainer input {
+  font-size: 15px;
+  padding: 10px;
+  border: none;
+  margin-top: 10px;
+}
+
+.newMemoryContainer button {
+  width: 100px;
+  height: 30px;
+  background-color: #3868D9;
+  border-radius: 7px;
+  padding: 5px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.newMemoryContainer button:hover {
+  background-color: #4f83ff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.memoryCard {
+  width: 250px;
+  background-color: #EAEEF9;
+  border-radius: 10px;
+  margin-right: 30px;
+}
+
+.memoryCard img {
+  width: 250px;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.memoryCard p {
+  text-align: center;
+  font-family: arial;
+  font-size: 18px;
+}
+
+.memoriesContainer {
+  display: flex;
+}
+
+.memoryCard button {
+  background-color: #3868D9;
+  border: none;
+  color: white;
+  border-radius: 7px;
+  padding: 8px;
+}
+
+.memoryCard button:hover {
+  background-color: #4f83ff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}

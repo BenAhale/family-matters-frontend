@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import styles from '../styles/Memories.module.css'
 
 export function ImageForm() {
 
-  const [picture, setPicture] = useState("Original Value");
+  const [picture, setPicture] = useState("");
   let url = ""
-  let history = useHistory();
   const [description, setDescription] = useState("")
 
   const onChangeHandler = (e) => {
@@ -18,7 +17,7 @@ export function ImageForm() {
 
   async function onFormSubmit(e) {
     e.preventDefault();
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/url`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/url`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +50,7 @@ export function ImageForm() {
   }
 
   async function updateDatabase() {
-    await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/new`, {
+    await fetch(`https://family-matters-api.herokuapp.com/memories/new`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -66,25 +65,18 @@ export function ImageForm() {
     })
     .then(response => response.json())
     .then(body => console.log(body))
-    .then(history.push("/memories"))
+    .then(setPicture(null))
+    .then(setDescription(""))
     .catch(error => console.log(error))
   }
 
-  // async function getImage() {
-  //   await fetch(`${process.env.REACT_APP_BACKEND_URL}/memories/geturl`, {
-  //     method: "GET"
-  //   })
-  //   .then(response => response.json())
-  //   .then((body) => {
-  //     setNewUrl(body.url)
-  //   })
-  // }
-
   return (
-    <div>
+    <div className={styles.newMemoryContainer}>
+      <h1>New Memory</h1>
       <input type="file" onChange={onChangeHandler} />
-      <input type="text" onChange={descriptionHandler} />
-      <button onClick={onFormSubmit}>Upload!</button>
+      <label htmlFor="description">Description</label>
+      <input name="description" type="text" onChange={descriptionHandler} />
+      <button onClick={onFormSubmit}>Upload</button>
     </div>
   )
 }

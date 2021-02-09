@@ -18,14 +18,16 @@ function App() {
         <Navbar />
         {/* Routes */}
         <Switch>
-          {/* defining routes with paths */}
-          {/* first with exact prevents double rendering */}
-          <ProtectedRoute exact path="/" component={Home} />
-          <Route path="/sign-in" component={SignIn} />
-          <Route path="/sign-up" component={SignUp} />
-          <ProtectedRoute exact path="/memories" component={Memories} />
-          <ProtectedRoute path="/events" component={Events} />
-          <ProtectedRoute exact path="/memories/new" component={ImageForm} />
+          <div id="content">
+            {/* defining routes with paths */}
+            {/* first with exact prevents double rendering */}
+            <Route exact path="/" component={Home} />
+            <Route path="/sign-in" component={SignIn} />
+            <Route path="/sign-up" component={SignUp} />
+            <ProtectedRoute exact path="/memories" component={Memories} />
+            <ProtectedRoute path="/events" component={Events} />
+            <ProtectedRoute exact path="/memories/new" component={ImageForm} />
+          </div>
         </Switch>
       </div>
     </BrowserRouter>

@@ -1,0 +1,27 @@
+.container {
+  margin: 0 auto;
+  width: 500px;
+  margin-top: 20%;
+}
+
+.container h1 {
+  font-size: 80px;
+}
+
+.container h3 {
+  font-size: 25px;
+}
+
+.container button {
+  background-color: #3868D9;
+  border-radius: 15px;
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 17px;
+  margin-right: 15px;
+}
+
+.container button:hover {
+  cursor: pointer;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from '../styles/SignIn.module.css'
 
 export function SignUp({ history }) {
   // setting initial states, hooks
@@ -12,7 +13,7 @@ export function SignUp({ history }) {
     event.preventDefault();
     try {
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_URL}/auth/sign-up`,
+        `https://family-matters-api.herokuapp.com/auth/sign-up`,
         {
           method: "POST",
           headers: {
@@ -43,51 +44,65 @@ export function SignUp({ history }) {
   }
 
   return (
-    <>
+    <div className={styles.formContainer}>
       <h1>Sign Up</h1>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <label htmlFor="firstname">First Name</label>
-        <input
-          type="text"
-          name="firstname"
-          id="firstname"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
-        <label htmlFor="lastname">Last Name</label>
-        <input
-          type="text"
-          name="lastname"
-          id="lastname"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-        />
-        <label htmlFor="familyid">Family Code</label>
-        <input
-          type="text"
-          name="familyid"
-          id="familyid"
-          value={familyID}
-          onChange={(e) => setFamilyID(e.target.value)}
-        />
-        <input type="submit" value="Submit" />
+        <div className={styles.inputGroup}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="firstname">First Name</label>
+          <input
+            type="text"
+            name="firstname"
+            id="firstname"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="lastname">Last Name</label>
+          <input
+            type="text"
+            name="lastname"
+            id="lastname"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="familyid">Family Code</label>
+          <p className={styles.fadedText}>(Leave blank to create a new family)</p>
+          <input
+            type="text"
+            name="familyid"
+            id="familyid"
+            value={familyID}
+            onChange={(e) => setFamilyID(e.target.value)}
+          />
+        </div>
+        <div className={styles.inputGroup}>
+          <input type="submit" value="Submit" />
+          <button className={styles.redirectButton} onClick={() => history.push("/sign-in")}>Sign In</button>
+        </div>
       </form>
-    </>
+    </div>
   );
 }

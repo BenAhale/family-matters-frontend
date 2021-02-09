@@ -1,0 +1,131 @@
+nav {
+  margin: 0;
+  background-color: #3868D9;
+  color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 75px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.menuButton {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 20px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.menuButton:active, .menuButton:focus {
+  border: none;
+  outline: none;
+}
+
+nav ul {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+nav li {
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.signOut {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.signIn {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+  height: 30px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.expandedNav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #4f83ff;
+  width: 280px;
+  height: 100%;
+  z-index: 1;
+}
+
+.innerNavContainer {
+  margin-left: 75px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  --animate-duration: 0.5s;
+}
+
+.innerNavContainer h1 {
+  font-size: 27px;
+  color: white;
+  text-align: center;
+}
+
+.innerNavContainer ul {
+  list-style-type: none;
+  padding: 30px;
+}
+
+.innerNavContainer li {
+  font-size: 25px;
+  padding: 10px;
+  font-family: arial;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.innerNavContainer a {
+  text-decoration: none;
+  color: white;
+}
+
+.innerNavContainer li:hover {
+  background-color: #3868D9;
+  cursor: pointer;
+}
+
+.flexHolder {
+  height: 70px;
+}
+
+.mainFlexHolder {
+  height: 42px;
+}
