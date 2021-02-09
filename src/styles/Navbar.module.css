@@ -129,3 +129,8 @@ nav a {
 .mainFlexHolder {
   height: 42px;
 }
+
+.flexHolder p {
+  font-family: arial;
+  text-align: center;
+}

@@ -12,6 +12,7 @@ export function Navbar(props) {
   const [navDisplay, setNavDisplay] = useState(false)
   const [auth, setAuth] = useState(false)
   let history = useHistory("")
+  const [familyID, setfamilyID] = useState("")
 
   // document.getElementById("navbar").addEventListener("mouseover", showNav)
 
@@ -22,7 +23,9 @@ export function Navbar(props) {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
-        });
+        })
+        .then(response => response.json())
+        .then(body => setfamilyID(body.familyid))
         if (response.status >= 400) {
           history.push("/sign-in")
           throw new Error("not authorized");
@@ -76,7 +79,7 @@ export function Navbar(props) {
               <li><Link to="/events">Events</Link></li>
               <li><Link to="/memories">Memories</Link></li>
             </ul>
-            <div className={styles.flexHolder}></div>
+            {!(familyID === "") && <div className={styles.flexHolder}><p>Family ID: {familyID}</p></div>}
           </div>
         </div>
       </Animated>
