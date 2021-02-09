@@ -33,6 +33,8 @@ export function Events(props) {
       case "none":
         setEventDisplay("block")
         break;
+      default:
+        setEventDisplay("none")
     }
   }
 

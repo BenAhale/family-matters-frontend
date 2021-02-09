@@ -12,7 +12,6 @@ export function Navbar(props) {
   const [navDisplay, setNavDisplay] = useState(false)
   const [auth, setAuth] = useState(false)
   let history = useHistory("")
-  let height = window.innerHeight;
 
   // document.getElementById("navbar").addEventListener("mouseover", showNav)
 

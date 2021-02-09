@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import moment from "moment";
 import { CardLink } from "../styles/Events";
 import { BrowserRouter, Route, Link } from "react-router-dom";
@@ -11,7 +11,6 @@ export function Event(props) {
   // props passed through
   const eventDate = moment(props.date).format("LL");
   const setEvents = props.setEvents;
-  const [editing, setEditing] = useState("")
 
   // filter to display events that are on calendar date clicked on
   const todaysEvents = props.events.filter((event) => event.date === eventDate);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from '../styles/Memories.module.css'
 import {ImageForm} from './ImageForm'
-import { faPencilAlt, faExclamationCircle, faStickyNote, faTrash } from "@fortawesome/free-solid-svg-icons";
+import { faPencilAlt, faExclamationCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Memories() {
